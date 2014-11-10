@@ -32,12 +32,14 @@ echo $ADMIN_PASSWORD | passwd --stdin lightster
 sed -i 's@^[\s#]*PermitRootLogin\s*\(no\|yes\|without-password\)*\s*$@PermitRootLogin no@g' /etc/ssh/sshd_config
 systemctl restart sshd
 
+# install .ssh repo
 RETURN_DIR=$(pwd)
 cd /home/$ADMIN_USERNAME
 git clone https://github.com/lightster/.ssh.git .ssh 
 cd .ssh
 bin/sshk-update
 chown -R $ADMIN_USERNAME:$ADMIN_USERNAME .
+git remote set-url origin git@github.com:lightster/.ssh.git
 cd $RETURN_DIR
 
 # install chef
