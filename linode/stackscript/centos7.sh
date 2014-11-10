@@ -5,6 +5,10 @@
 #<UDF name="admin_username" label="Username for sys admin">
 #<UDF name="admin_password" label="Password for sys admin">
 
+# prevent the script from running multiple times
+# (a workaround for Linode StackScript bug with CentOS 7 image)
+[ "${FLOCKER}" != "$0" ] && exec env FLOCKER="$0" flock -en "$0" "$0" "$@" || :
+
 set -e
 
 # redirect stdout and stderr to a log file
