@@ -46,3 +46,13 @@ cd $RETURN_DIR
 curl -L https://www.opscode.com/chef/install.sh | bash
 # log the chef-solo version to the log file
 chef-solo -v
+
+# install server-config repo (needed for chef cookbooks)
+RETURN_DIR=$(pwd)
+mkdir /etc/lightdatasys
+cd /etc/lightdatasys
+git clone https://github.com/lightster/server-config.git server
+cd server
+chown -R $ADMIN_USERNAME:$ADMIN_USERNAME /etc/lightdatasys
+git remote set-url origin git@github.com:lightster/server-config.git
+cd $RETURN_DIR
