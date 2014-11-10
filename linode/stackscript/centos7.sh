@@ -8,7 +8,7 @@
 set -e
 
 # redirect stdout and stderr to a log file
-exec >/var/log/stackscript.log 2>&1
+exec >>/var/log/stackscript.log 2>&1
 
 IPV4ADDR=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }')
 IPV6ADDR=$(/sbin/ifconfig eth0 | awk '/inet6.*global/ { print $2 }')
