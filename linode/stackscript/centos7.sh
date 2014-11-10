@@ -39,3 +39,8 @@ cd .ssh
 bin/sshk-update
 chown -R $ADMIN_USERNAME:$ADMIN_USERNAME .
 cd $RETURN_DIR
+
+# install chef
+curl -L https://www.opscode.com/chef/install.sh | bash
+# log the chef-solo version to the log file
+chef-solo -v
