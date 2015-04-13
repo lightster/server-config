@@ -30,7 +30,7 @@ yum update -y
 yum install -y git
 
 useradd -G wheel $ADMIN_USERNAME
-echo $ADMIN_PASSWORD | passwd --stdin lightster
+echo $ADMIN_PASSWORD | passwd --stdin $ADMIN_USERNAME
 
 # disable the ability to SSH in as root
 sed -i 's@^[\s#]*PermitRootLogin\s*\(no\|yes\|without-password\)*\s*$@PermitRootLogin no@g' /etc/ssh/sshd_config
