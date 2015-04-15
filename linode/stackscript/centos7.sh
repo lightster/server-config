@@ -21,9 +21,6 @@ hostnamectl set-hostname $HOSTNAME
 echo $IPV4ADDR $FQDN $HOSTNAME >> /etc/hosts
 echo $IPV6ADDR $FQDN $HOSTNAME >> /etc/hosts
 
-# set the timezone
-ln -sf /usr/share/zoneinfo/UTC /etc/localtime
-
 yum update -y
 
 # we need git for cloning repos
