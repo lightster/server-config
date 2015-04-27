@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-#<UDF name="hostname" label="Hostname">
-#<UDF name="fqdn" label="Fully qualified domain name">
 #<UDF name="admin_username" label="Username for sys admin">
 #<UDF name="admin_password" label="Password for sys admin">
 
