@@ -32,6 +32,7 @@ else
     echo "$KEEPER_USERNAME:$KEEPER_PASSWORD" | chpasswd
     # re-enable tracing
     set -x
+    echo "%$KEEPER_USERNAME ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/$KEEPER_USERNAME
     echo " done"
 fi
 
