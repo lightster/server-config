@@ -7,6 +7,8 @@
 [ "${FLOCKER}" != "$0" ] && exec env FLOCKER="$0" flock -en "$0" "$0" "$@" || :
 
 set -e
+set -u
+set -x
 
 KEEPER_USERNAME="boxkeeper"
 KEEPER_HOMEDIR="/home/$KEEPER_USERNAME"
