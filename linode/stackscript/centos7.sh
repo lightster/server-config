@@ -2,11 +2,9 @@
 #
 #<UDF name="keeper_password" label="Password for keeper">
 
-if [ "$LINODE_ID" != "" ] ; then
-    # prevent the script from running multiple times
-    # (a workaround for Linode StackScript bug with CentOS 7 image)
-    [ "${FLOCKER}" != "$0" ] && exec env FLOCKER="$0" flock -en "$0" "$0" "$@" || :
-fi
+# prevent the script from running multiple times
+# (a workaround for Linode StackScript bug with CentOS 7 image)
+[ "${FLOCKER}" != "$0" ] && exec env FLOCKER="$0" flock -en "$0" "$0" "$@" || :
 
 set -e
 set -u
