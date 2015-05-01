@@ -22,9 +22,6 @@ exec >>/var/log/stackscript.log 2>&1
 
 yum update -y
 
-# we need git for cloning repos
-yum install -y git
-
 useradd -G wheel $KEEPER_USERNAME
 echo "$KEEPER_USERNAME:$KEEPER_PASSWORD" | chpasswd
 
