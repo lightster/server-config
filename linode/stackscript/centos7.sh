@@ -20,8 +20,6 @@ KEEPER_KEYS="$KEEPER_SSHDIR/authorized_keys"
 # redirect stdout and stderr to a log file
 exec >>/var/log/stackscript.log 2>&1
 
-yum update -y
-
 useradd -G wheel $KEEPER_USERNAME
 echo "$KEEPER_USERNAME:$KEEPER_PASSWORD" | chpasswd
 
