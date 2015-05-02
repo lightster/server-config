@@ -1,3 +1,8 @@
+# This is stackscript is no longer maintained but is
+# being left here for historical purposes.
+# See https://github.com/lightster/linode-vagrant/blob/master/stackscript.sh
+# for the most up-to-date version.
+#
 #!/bin/bash
 #
 #<UDF name="keeper_password" label="Password for keeper">
